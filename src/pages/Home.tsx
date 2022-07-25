@@ -43,26 +43,28 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome Felipe</Text>
+      <Text style={styles.title} testID='welcome'>Welcome Felipe</Text>
 
       <Text style={styles.greetings}>
         {greetings}
       </Text>
 
       <TextInput
+        testID='new-skill-input'
         style={styles.input}
         placeholder='New skill'
         placeholderTextColor='#555'
         onChangeText={setNewSkill}
       />
 
-      <Button title='Add' onPress={handleAddNewSkill} />
+      <Button testID='add-new-skill-button' title='Add' onPress={handleAddNewSkill} />
 
       <Text style={[styles.title, { marginTop: 50, marginBottom: 20 }]}>
         My Skills
       </Text>
 
       <FlatList
+        testID='skills-flat-list'
         data={mySkills}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
